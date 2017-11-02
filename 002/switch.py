@@ -2,19 +2,18 @@
 # coding: utf-8
 
 import RPi.GPIO as GPIO
-import time
+from time import sleep
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(4, GPIO.OUT)
 GPIO.setup(12, GPIO.IN)
 
 try:
     while True:
-        if GPIO.input(12) == 1:
-            GPIO.output(16, 1)
+        if GPIO.input(12) == GPIO.LOW:
+            print(GPIO.LOW)
         else:
-            GPIO.output(16, 0)
-        time.sleep(0.01)
+            print(GPIO.HIGH)
+        sleep(0.01)
 
 except KeyboardInterrupt:
     pass
