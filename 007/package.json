@@ -1,0 +1,14 @@
+{
+  "name": "007",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lchika.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "rpio": "^0.9.19"
+  }
+}
