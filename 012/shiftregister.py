@@ -50,8 +50,7 @@ class Light:
 
     def on(self, data, sleep = 1):
         for d in data:
-	    self.sr.send(d)
-            print(d)
+            self.sr.send(d)
             time.sleep(sleep)
 
     def cleanup(self):
