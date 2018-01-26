@@ -36,7 +36,6 @@ class ShiftRegister:
         self.low(self.rck)
 
     def send(self, nums):
-        self.reset()
         for num in nums:
             if num == 1:
                 self.high(self.si)
@@ -47,11 +46,12 @@ class ShiftRegister:
 
 class Light:
     def __init__(self):
-        self.sr = ShiftRegister(16, 20, 21)
+        self.sr = ShiftRegister(12, 20, 21)
 
     def on(self, data, sleep = 1):
         for d in data:
 	    self.sr.send(d)
+            print(d)
             time.sleep(sleep)
 
     def cleanup(self):
@@ -76,7 +76,7 @@ data = [
     [1, 1, 1, 1, 1, 1, 0, 0, 0],
     [1, 1, 1, 1, 1, 1, 1, 0, 0],
     [1, 1, 1, 1, 1, 1, 1, 1, 0],
-    [1, 1, 1, 1, 1, 0, 0, 0, 1]
+    [1, 1, 1, 1, 1, 1, 1, 1, 1]
 ]
-light.on(data, 0.5)
+light.on(data, 0.2)
 light.cleanup()
