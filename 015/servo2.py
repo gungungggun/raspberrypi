@@ -14,8 +14,8 @@ def move(sm, deg):
     a = 0.5
     b = 2.4
     hz = 50
-    duty = (a + (b - a) * ((deg + 90) / 180)) * hz / 10
-    print(deg)
+    duty = a + (b - a) * ((deg + 90) / 180)
+    par = duty / (1.0 / hz * 1000) * 100
     sm.ChangeDutyCycle(duty)
     time.sleep(1)
 
